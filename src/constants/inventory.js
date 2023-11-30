@@ -328,4 +328,75 @@ export let inventory = [
     },
 ];
 
+const tvTypes = inventory.map((tv) => {
+    return tv.type;
+});
+
+console.log(tvTypes);
+
+const soldOutTvs = inventory.filter((tv) => {
+    return tv.originalStock === 0;
+});
+
+console.log(soldOutTvs);
+
+const specificType = inventory.find((tv) => {
+    return tv.type === 'NH3216SMART';
+});
+
+console.log(specificType);
+
+const suitableSportTv = inventory.map((tv) => {
+    if (tv.refreshRate >= 100) {
+        return 'name: ' + tv.brand + tv.name + ', suitable: true';
+    } else {
+        return 'name: ' + tv.brand + tv.name + ', suitable: false';
+    }
+});
+
+console.log(suitableSportTv);
+
+const bigScreenSizes = inventory.filter ((tv) => {
+    return tv.availableSizes.some(size => size >= 65);
+});
+
+console.log(bigScreenSizes);
+
+const tvAmbiLight = inventory.filter((tv) => {
+    return tv.options.some(option => option.name === 'ambiLight' && option.applicable === true);
+});
+
+console.log(tvAmbiLight);
+
+export const listTvBrands = inventory.map ((tv) => {
+    return tv.brand;
+});
+
+// export const allFormattedPrices = inventory.map((tv) => {
+//     return formatPrice(tv.price);
+// });
+//
+// export const allTvsFormat = inventory.map ((tv) => {
+//     return formatTvName(tv) + '\n' + formatPrice(tv) + '\n' + formatScreenOptions(tv);
+// });
+
+// export const allFormattedTvs = inventory.map((tv) => formatSingleTv(tv));
+//
+// export const optionNames = inventory.map((tv) => {
+//     return tv.options;
+// });
+
+// export const allTvs = inventory.map((tv, index) => {
+//     return (
+//         <section key={index} className="tv-details">
+//             <h3 className="tv-title">{formatTvName(tv)}</h3>
+//             <p className="tv-price">{formatPrice(tv.price)}</p>
+//             <p className="tv-sizes">{formatScreenOptions(tv)}</p>
+//             {/* Additional TV information can be displayed here */}
+//         </section>
+//     );
+// });
+//
+// console.log(allTvs);
+
 

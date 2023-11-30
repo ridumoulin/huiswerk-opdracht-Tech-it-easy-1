@@ -109,21 +109,29 @@ h2 {
     height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+
+
+    margin: 30px 0;
 }
 
 .tv-title {
     font-size: 25px;
     font-weight: bold;
+
+    margin: 20px 0;
 }
 
 .tv-price{
     font-size: 30px;
     font-weight: bold;
+
+    margin-bottom: 20px;
 }
 
 .tv-sizes {
     font-size: 17px;
+
+    margin-bottom: 20px;
 }
 
 .tv-info {
@@ -149,3 +157,4 @@ h2 {
     border-radius: 3px;
     margin-right: 10px;
 }
+
